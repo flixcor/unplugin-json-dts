@@ -1,44 +1,55 @@
 {
-  "name": "vite-plugin-json-dts",
+  "name": "unplugin-json-dts",
   "version": "0.0.1",
   "description": "Automatically generate typings for json files",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "engines": {
     "node": ">=14.16"
   },
   "scripts": {
-    "build": "tsc --project tsconfig.json",
+    "build": "tsup src/*.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flixcor/vite-plugin-json-dts.git"
+    "url": "git+https://github.com/flixcor/unplugin-json-dts.git"
   },
   "keywords": [
     "json",
     "vite",
-    "vite-plugin",
+    "unplugin",
     "plugin",
     "typescript"
   ],
   "author": "Felix Cornelissen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/flixcor/vite-plugin-json-dts/issues"
+    "url": "https://github.com/flixcor/unplugin-json-dts/issues"
   },
-  "homepage": "https://github.com/flixcor/vite-plugin-json-dts#readme",
+  "homepage": "https://github.com/flixcor/unplugin-json-dts#readme",
   "devDependencies": {
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "typescript": "^4.4.4",
-    "vite": "^2.6.13"
+    "tsup": "^5.5.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "unplugin": "^0.2.19"
   }
 }
