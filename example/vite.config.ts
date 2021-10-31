@@ -1,6 +1,6 @@
 import {defineConfig} from 'vite'
-import {vitePluginJsonDts} from '../src'
+import jsonDts from '../src/vite'
 
 export default defineConfig({
-    plugins: [vitePluginJsonDts()]
+    plugins: [jsonDts()]
 })

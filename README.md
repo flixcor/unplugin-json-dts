@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-json-dts?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-json-dts)
 
-Automatically generate better typings for json files
+Automatically generate better typings for json files. Supports json modules.
 
 ![Comparision of before and after screenshots](/assets/before-after.gif)
 

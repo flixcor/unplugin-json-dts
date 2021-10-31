@@ -11,6 +11,28 @@ async function getExisting(fileName: string) {
   return ''
 }
 
+function replaceJsonRegularString(code: string) {
+  return `declare const json: ${code}
+export default json`
+}
+
+function replaceJsonModuleString(code: string) {
+  const [beforeExport, afterExport] = code.split('export default', 2)
+  const replacedBefore = beforeExport
+  .replace(/=/g, ':')
+  .replace('export default', 'declare const $defaultExport:')
+  const replacedAfter = afterExport.replace(/:/g, ': typeof')
+  return [replacedBefore, replacedAfter]
+    .join('declare const $defaultExport:') + `
+export default $defaultExport`
+}
+
+function replaceJsonString(code: string) {
+  return code?.startsWith('export')
+    ? replaceJsonModuleString(code)
+    : replaceJsonRegularString(code)
+}
+
 export default createUnplugin(() => ({
   name: 'unplugin-json-dts',
   transformInclude(id) {
@@ -18,9 +40,8 @@ export default createUnplugin(() => ({
   },
   async transform(code, id) {
     const fileName = id + '.d.ts'
-    const [originalJson, existing] = await Promise.all([fs.readFile(id, encoding), getExisting(fileName)])
-    const newContent = `declare const json: ${originalJson}
-export default json`
+    const existing = await getExisting(fileName)
+    const newContent = replaceJsonString(code)
     if(newContent !== existing) {
       await fs.writeFile(fileName, newContent, encoding)
     }
