@@ -1,5 +1,5 @@
 export const $id : "https://example.com/person.schema.json";
-export const $schema : "https://json-schema.org/draft/2020-12/schema";
+export const $schema : "https://json-schema.org/draft-07/schema";
 export const title : "Person";
 export const type : "object";
 export const properties : {
@@ -25,4 +25,4 @@ declare const $defaultExport: {
 	properties: typeof properties
 };
 
-export default $defaultExport
+export default $defaultExport;
