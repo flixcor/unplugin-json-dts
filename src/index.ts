@@ -13,9 +13,13 @@ export default json;`
 
 function replaceJsonModuleString(code: string) {
   const [beforeExport, afterExport] = code.split('export default', 2)
+  const beforeExportReplaced = beforeExport.replace(/=/g, ':')
+  const afterExportReplaced = beforeExport 
+    ? afterExport.replace(/:/g, ': typeof')
+    : afterExport
   return [
-    beforeExport.replace(/=/g, ':'), 
-    afterExport.replace(/:/g, ': typeof')
+    beforeExportReplaced, 
+    afterExportReplaced
   ].join('declare const $defaultExport:') + `
 export default $defaultExport;`
 }
