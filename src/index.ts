@@ -13,15 +13,16 @@ async function getExisting(fileName: string) {
 
 export default createUnplugin(() => ({
   name: 'unplugin-json-dts',
+  transformInclude(id) {
+    return fileRegex.test(id)
+  },
   async transform(code, id) {
-    if(fileRegex.test(id)) {
-      const fileName = id + '.d.ts'
-      const [originalJson, existing] = await Promise.all([fs.readFile(id, encoding), getExisting(fileName)])
-      const newContent = `declare const json: ${originalJson}
+    const fileName = id + '.d.ts'
+    const [originalJson, existing] = await Promise.all([fs.readFile(id, encoding), getExisting(fileName)])
+    const newContent = `declare const json: ${originalJson}
 export default json`
-      if(newContent !== existing) {
-        await fs.writeFile(fileName, newContent, encoding)
-      }
+    if(newContent !== existing) {
+      await fs.writeFile(fileName, newContent, encoding)
     }
     return {code}
   }
