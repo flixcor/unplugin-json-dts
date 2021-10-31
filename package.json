@@ -1,6 +1,6 @@
 {
   "name": "unplugin-json-dts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Automatically generate better typings for json files",
   "files": [
     "dist"
@@ -32,7 +32,9 @@
     "vite",
     "unplugin",
     "plugin",
-    "typescript"
+    "typescript",
+    "rollup",
+    "webpack"
   ],
   "author": "Felix Cornelissen",
   "license": "ISC",
