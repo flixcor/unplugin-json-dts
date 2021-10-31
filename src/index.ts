@@ -11,7 +11,7 @@ async function getExisting(fileName: string) {
   return ''
 }
 
-const unplugin = createUnplugin(() => ({
+export default createUnplugin(() => ({
   name: 'unplugin-json-dts',
   async transform(code, id) {
     if(fileRegex.test(id)) {
@@ -26,8 +26,3 @@ export default json`
     return {code}
   }
 }))
-
-export const vitePluginJsonDts = unplugin.vite
-export const webpackPluginJsonDts = unplugin.webpack
-export const rollupPluginJsonDts = unplugin.rollup
-export default unplugin

@@ -1,16 +1,29 @@
 {
   "name": "unplugin-json-dts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Automatically generate better typings for json files",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "exports": {
     ".": {
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
     },
-    "./*": "./*"
+    "./*": "./*",
+    "./rollup": {
+      "require": "./dist/rollup.js",
+      "import": "./dist/rollup.mjs"
+    },
+    "./vite": {
+      "require": "./dist/vite.js",
+      "import": "./dist/vite.mjs"
+    },
+    "./webpack": {
+      "require": "./dist/webpack.js",
+      "import": "./dist/webpack.mjs"
+    }
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
