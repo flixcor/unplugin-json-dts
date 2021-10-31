@@ -1,6 +1,6 @@
 {
   "name": "unplugin-json-dts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Automatically generate better typings for json files",
   "files": [
     "dist"
@@ -19,7 +19,7 @@
     "node": ">=14.16"
   },
   "scripts": {
-    "build": "tsup src/*.ts",
+    "build": "tsup src/*.ts && esno scripts/postbuild.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
   },
@@ -37,7 +37,7 @@
     "webpack"
   ],
   "author": "Felix Cornelissen",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/flixcor/unplugin-json-dts/issues"
   },
@@ -48,6 +48,9 @@
     "@typescript-eslint/parser": "^5.2.0",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
+    "esno": "^0.10.1",
+    "fast-glob": "^3.2.7",
+    "path": "^0.12.7",
     "tsup": "^5.5.0",
     "typescript": "^4.4.4"
   },
