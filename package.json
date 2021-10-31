@@ -1,6 +1,6 @@
 {
   "name": "unplugin-json-dts",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Automatically generate better typings for json files. Supports json modules",
   "files": [
     "dist",

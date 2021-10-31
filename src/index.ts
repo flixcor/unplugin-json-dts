@@ -28,9 +28,9 @@ export default $defaultExport`
 }
 
 function replaceJsonString(code: string) {
-  return code?.startsWith('export')
-    ? replaceJsonModuleString(code)
-    : replaceJsonRegularString(code)
+  return code?.startsWith('{')
+    ? replaceJsonRegularString(code)
+    : replaceJsonModuleString(code)
 }
 
 export default createUnplugin(() => ({
