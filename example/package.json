@@ -2,9 +2,7 @@
   "name": "unplugin-json-dts-example",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+    "dev": "vite"
   },
   "devDependencies": {
     "typescript": "^4.3.2",
