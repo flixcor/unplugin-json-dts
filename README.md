@@ -17,10 +17,10 @@ npm i unplugin-json-dts -D
 
 ```ts
 // vite.config.ts
-import { unpluginJsonDtsVite } from 'unplugin-json-dts'
+import jsonDts from 'unplugin-json-dts/vite'
 export default defineConfig({
   plugins: [
-    unpluginJsonDtsVite(),
+    jsonDts(),
   ],
 })
 ```
@@ -32,10 +32,10 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
-import { unpluginJsonDtsRollup } from 'unplugin-json-dts'
+import jsonDts from 'unplugin-json-dts/rollup'
 export default {
   plugins: [
-    unpluginJsonDtsRollup(),
+    jsonDts(),
   ],
 }
 ```
@@ -51,7 +51,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-json-dts').webpack()
+    require('unplugin-json-dts/webpack')()
   ]
 }
 ```
