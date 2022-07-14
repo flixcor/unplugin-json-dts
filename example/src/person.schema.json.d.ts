@@ -22,6 +22,8 @@ declare const $defaultExport: {
 	$schema: typeof $schema,
 	title: typeof title,
 	type: typeof type,
+	"not-easy-key": {
+},
 	properties: typeof properties
 };
 
