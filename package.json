@@ -1,7 +1,7 @@
 {
   "name": "unplugin-json-dts",
   "type": "module",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Automatically generate better typings for json files. Supports json modules",
   "author": "Felix Cornelissen",
   "license": "MIT",

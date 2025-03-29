@@ -1,7 +1,9 @@
 import './style.css'
 import person from './person.schema.json'
+import large from './10004_bytes.json'
 
 console.log(person.properties.age.type)
+console.log(large[0].type)
 
 const app = document && document.querySelector<HTMLDivElement>('#app')
 

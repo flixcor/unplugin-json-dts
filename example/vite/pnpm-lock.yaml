@@ -12,8 +12,8 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
       unplugin-json-dts:
-        specifier: 1.3.0
-        version: 1.3.0(vite@6.2.3)
+        specifier: ^1.3.1
+        version: 1.3.1(vite@6.2.3)
       vite:
         specifier: ^6.2.3
         version: 6.2.3
@@ -314,8 +314,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  unplugin-json-dts@1.3.0:
-    resolution: {integrity: sha512-ctlbshO0nnTg+xlPybEyrx5Atc1pTaW2sQ4GUwDWkRUOIgHR+hw715WSKeqtVdKLDAutS6+zh97v0jf1SdD/6Q==}
+  unplugin-json-dts@1.3.1:
+    resolution: {integrity: sha512-AHkUAmsL78pzr3HvpgDAn8ruYrl5gJTRrAt972KW1UtLdtbS9YJoS5nci+ruDvSPwqKw24JmIztfI7YWWA/D9Q==}
     engines: {node: '>=22.14'}
     peerDependencies:
       rollup: ^3
@@ -588,7 +588,7 @@ snapshots:
 
   typescript@5.8.2: {}
 
-  unplugin-json-dts@1.3.0(vite@6.2.3):
+  unplugin-json-dts@1.3.1(vite@6.2.3):
     dependencies:
       unplugin: 2.2.2
     optionalDependencies:

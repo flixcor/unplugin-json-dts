@@ -30,7 +30,8 @@ export default $defaultExport;`
 }
 
 async function replaceJsonString(code: string, id: string) {
-  return code?.startsWith('export')
+  return !code?.includes('JSON.parse')
+    && code?.startsWith('export')
     ? replaceJsonModuleString(code)
     : code?.startsWith('{')
       ? replaceJsonRegularString(code)
